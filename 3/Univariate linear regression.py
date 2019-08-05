@@ -3,12 +3,12 @@ import numpy as np # import numpy
 import tensorflow as tf
 #import numpy as np
 
-trX = np.linspace(-1, 1, 101) #Create a linear space of 101 points between 1 and 1
-trY = 2 * trX + np.random.randn(*trX.shape) * 0.4 + 0.2 #Create The y function based on the x axis
-plt.figure() # Create a new figure
-plt.scatter(trX,trY) #Plot a scatter draw of the random datapoints
-plt.plot (trX, .2 + 2 * trX) # Draw one line with the line function
-
+#trX = np.linspace(-1, 1, 101) #Create a linear space of 101 points between 1 and 1
+#trY = 2 * trX + np.random.randn(*trX.shape) * 0.4 + 0.2 #Create The y function based on the x axis
+#plt.figure() # Create a new figure
+#plt.scatter(trX,trY) #Plot a scatter draw of the random datapoints
+#plt.plot (trX, .2 + 2 * trX) # Draw one line with the line function
+#plt.show()
 #get_ipython().magic(u'matplotlib inline')
 
 #import matplotlib.pyplot as plt
@@ -20,6 +20,7 @@ trY = 2 * trX + np.random.randn(*trX.shape) * 0.4 + 0.2 # create a y value which
 
 plt.scatter(trX,trY)
 plt.plot (trX, .2 + 2 * trX)
+plt.show()
 
 X = tf.placeholder("float", name="X") # create symbolic variables
 Y = tf.placeholder("float", name = "Y")
@@ -56,7 +57,7 @@ for i in range(100):
     b0temp=b.eval(session=sess)
     b1temp=w.eval(session=sess)
     plt.plot (trX, b0temp + b1temp * trX )
-
+    #plt.show()
 
 print (sess.run(w)) # Should be around 2 
 print (sess.run(b)) #Should be around 0.2
@@ -64,3 +65,4 @@ print (sess.run(b)) #Should be around 0.2
 
 plt.scatter(trX,trY)
 plt.plot (trX, sess.run(b) + trX * sess.run(w))
+plt.show()
