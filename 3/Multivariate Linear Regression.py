@@ -13,12 +13,18 @@ plt.figure() # Create a new figure
 
 y = df['MEDV']
 
+#for i in range (1,8):
+#    number = 420 + i
+#    ax1.locator_params(nbins=3)
+#    ax1 = plt.subplot(number)
+#    plt.title(list(df)[i])
+#    ax1.scatter(df[df.columns[i]],y) #Plot a scatter draw of the  datapoints
+#plt.tight_layout(pad=0.4, w_pad=0.5, h_pad=1.0)
+
 for i in range (1,8):
-    number = 420 + i
-    ax1.locator_params(nbins=3)
-    ax1 = plt.subplot(number)
+    plt.figure()
     plt.title(list(df)[i])
-    ax1.scatter(df[df.columns[i]],y) #Plot a scatter draw of the  datapoints
+    plt.scatter(df[df.columns[i]],y) #Plot a scatter draw of the  datapoints
 plt.tight_layout(pad=0.4, w_pad=0.5, h_pad=1.0)
 
 
